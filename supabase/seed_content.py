@@ -249,6 +249,212 @@ The outdoors and the kitchen are natural classrooms — no prep needed.
 
 > The best early education is the **sustainable** kind. Run this plan for two weeks, then tune it to your child's reactions.""",
     },
+    {
+        "slug": "car-counting-games", "tier": "free", "kind": "article",
+        "cover_emoji": "🚗", "sort_order": 7,
+        "title": "3 No-Prep Counting Games for the Car",
+        "excerpt": "Stuck in traffic? Turn the ride into math practice — no materials needed.",
+        "body": """## Why the car works
+
+Kids are strapped in, bored, and looking at the world — the perfect setup for noticing numbers. These games need zero prep and work for ages 3–6.
+
+## Game 1: Color count
+
+Pick a color. Everyone counts how many cars of that color pass in 2 minutes. Whoever's closest to the real count wins. Practices counting, comparing, and estimating.
+
+## Game 2: License plate math
+
+Read the numbers on a license plate and add them up. For younger kids, just read the digits out loud. For ages 5–6, race to add them first.
+
+## Game 3: I spy numbers
+
+"I spy the number 7!" — first to spot a 7 on a sign, plate, or building wins a point. First to 5 points picks the next song.
+
+## The rule that makes it last
+
+Rotate the games so they stay fresh, and let your child **be the game master** sometimes. Kids who run the game practice twice as hard without noticing.""",
+    },
+    {
+        "slug": "reading-roadmap-3-6", "tier": "member", "kind": "article",
+        "cover_emoji": "🔤", "sort_order": 8,
+        "title": "Reading Roadmap for Ages 3–6: From ABCs to First Books",
+        "excerpt": "The four stages of early reading, what to do at each one, and how to know when to move on.",
+        "body": """## Stage 1: Letter awareness (age 3)
+
+**Goal**: recognize uppercase letters and know they carry meaning.
+**Play**: alphabet puzzles, letter magnets on the fridge, "find the first letter of your name" everywhere.
+**Move on when**: names most letters on sight, no particular order needed.
+
+## Stage 2: Letter sounds (age 4)
+
+**Goal**: connect letters to sounds — "B says buh."
+**Play**: "I spy something that starts with mmm." Sing the alphabet slowly and pause — let your child fill in the missing letter.
+**Move on when**: knows most letter sounds and can tell you the first sound of simple words.
+
+## Stage 3: Blending (age 5)
+
+**Goal**: push sounds together — "c-a-t … cat!"
+**Play**: start with word families: cat, hat, mat, sat. Same ending, one letter changes. Our *Sight Words Flashcards* pack makes daily practice painless.
+**Move on when**: can sound out simple 3-letter words without help.
+
+## Stage 4: First books (age 6)
+
+**Goal**: read simple sentences with growing confidence.
+**Play**: predictable books with repeating patterns ("Brown Bear, Brown Bear"). Take turns reading pages. Never correct mid-sentence — wait for the page to end.
+**Done when**: reads a full early-reader book and can tell you what happened.
+
+## The golden rules
+
+1. **Read aloud daily** — 15 minutes of you reading to them does more than any app.
+2. **Let them choose** — a "too easy" book they love beats a "just right" book they hate.
+3. **Never test during story time** — asking "what does that word say?" every page turns joy into a quiz.
+
+> Reading grows like a plant: you can't pull it taller. You can only water it every day.""",
+    },
+    {
+        "slug": "sight-words-starter", "tier": "member", "kind": "article",
+        "cover_emoji": "👁️", "sort_order": 9,
+        "title": "Sight Words Starter: The First 25 Words",
+        "excerpt": "Why some words must be memorized, the 25 to start with, and a 5-minute daily routine.",
+        "body": """## What are sight words?
+
+Words like *the*, *said*, *was* that can't be sounded out easily — kids just have to recognize them instantly. They make up about 75% of early-reader text, so memorizing them unlocks real reading fast.
+
+## The first 25
+
+the · and · a · to · said · in · he · I · of · it · was · you · they · on · she · is · for · at · his · but · that · with · all · we · can
+
+(Print our *Sight Words Flashcards* pack to practice these.)
+
+## The 5-minute daily routine
+
+1. **Show** 5 cards, read each together (1 min)
+2. **Shuffle**, hold each up for 2 seconds — correct = keep, wrong = back in the pile (2 min)
+3. **Use one in a sentence** — "Can you say *they* in a sentence?" (2 min)
+
+Add 5 new words each week. Review all old ones every day — the pile only grows when the old ones are instant.
+
+## Three mistakes to avoid
+
+- **Don't drill 25 at once**: 5 new a week is the speed limit.
+- **Don't skip review**: a word isn't learned until it's instant for 3 days straight.
+- **Don't sound them out**: that's the whole point — these are the exceptions. Just memorize.
+
+> When your child reads *the* without thinking, they've taken the biggest step in early reading.""",
+    },
+    {
+        "slug": "focus-habits", "tier": "member", "kind": "article",
+        "cover_emoji": "🧘", "sort_order": 10,
+        "title": "Focus & Habits: A Daily Rhythm That Sticks",
+        "excerpt": "Kids don't lack focus — they lack rhythm. Build the day around four anchors.",
+        "body": """## The insight
+
+Adults focus with willpower. Kids focus with **rhythm** — predictable sequences their brain can relax into. Four anchors, same order, every day.
+
+## Anchor 1: Morning launch (5 min)
+
+Same three steps after breakfast: get dressed → make the bed → check the day's picture schedule. A visual schedule on the fridge beats verbal reminders every time.
+
+## Anchor 2: Learning block (15–20 min)
+
+One focused activity, timer on, phone away (yours too — they copy you). End with a tiny ritual: sticker on the chart, high five, done. The ritual is what makes it repeatable.
+
+## Anchor 3: Outdoor reset (30+ min)
+
+Physical play isn't a break from learning — it's when the brain files what it learned. No structure needed. Just outside.
+
+## Anchor 4: Evening wind-down (15 min)
+
+Bath → book → bed, same order. Screens off 30 minutes before. This anchor protects sleep, and sleep protects everything else.
+
+## When it falls apart (it will)
+
+Travel, illness, grandparents visiting — rhythm breaks. The rule: **never restart from zero**. Pick up the next anchor, not the whole day. A rhythm you can rejoin is a rhythm that survives.""",
+    },
+    {
+        "slug": "screen-time-rules", "tier": "member", "kind": "article",
+        "cover_emoji": "📱", "sort_order": 11,
+        "title": "Screen Time Rules That Actually Work",
+        "excerpt": "It's not about minutes — it's about which screens, with whom, and what comes after.",
+        "body": """## Stop counting minutes
+
+Research keeps finding the same thing: **what** they watch and **how** matter more than how long. An hour of building in Minecraft with dad beats 20 minutes of auto-playing toy unboxings alone.
+
+## The 3 rules that work
+
+### 1. Together beats alone
+
+Co-view whenever possible. Ask questions: "Why do you think she did that?" A show watched together is a conversation. A show watched alone is a babysitter.
+
+### 2. Active beats passive
+
+Building, drawing, coding games > watching videos. If they're creating something, it's barely "screen time" at all.
+
+### 3. Endings beat timers
+
+"When this episode ends" works better than "10 more minutes" — kids understand stories ending. Use natural breakpoints: episode end, level complete, timer for open-ended games.
+
+## The setup that enforces itself
+
+- **One charging station** outside bedrooms — devices sleep there, so do kids
+- **No screens during meals** — non-negotiable, applies to parents
+- **The 30-minute rule** — screens off 30 minutes before bed, every night
+
+## What to do instead (the real battle)
+
+Rules fail when there's nothing better to do. Keep a "boredom box": puzzles, coloring pages (print ours!), blocks, cards. "I'm bored" should lead to the box, not the tablet.""",
+    },
+    {
+        "slug": "number-tracing", "tier": "member", "kind": "download",
+        "cover_emoji": "✏️", "sort_order": 12, "file_path": "worksheets/number-tracing.pdf",
+        "title": "Number Tracing: 1–10",
+        "excerpt": "Trace big numbers, practice writing, then count and color the dots. Ages 3–5.",
+        "body": """## How to use this pack
+
+- **Step 1 — trace**: finger-trace the big gray number first, then trace with a crayon
+- **Step 2 — write**: practice in the boxes below (4 tries per number)
+- **Step 3 — count**: count the dots and color them in — connects the symbol to the quantity
+
+## Pencil grip check
+
+Thumb and index finger hold, middle finger supports — the "tripod grip." If your child fist-grips, try shorter crayons: they're impossible to fist-hold.
+
+> One number a day is plenty. Finish all 10, then start again — speed and confidence grow with repetition.""",
+    },
+    {
+        "slug": "shapes-colors", "tier": "member", "kind": "download",
+        "cover_emoji": "🟢", "sort_order": 13, "file_path": "worksheets/shapes-colors.pdf",
+        "title": "Shapes & Colors Coloring Pack",
+        "excerpt": "Six shapes to color and name, plus a color-by-instruction challenge. Ages 3–5.",
+        "body": """## Page 1: Color and name
+
+Color each shape, then say its name out loud: circle, square, triangle, rectangle, diamond, oval.
+
+**Bonus**: find each shape somewhere in your house. (Hint: the TV is a rectangle.)
+
+## Page 2: Color by instruction
+
+Read each line and color the matching shape the right color. This practices **listening + following multi-step instructions** — a key school-readiness skill.
+
+> When finished, ask: "Which shape was hardest to color inside?" — staying inside the lines is fine-motor practice in disguise.""",
+    },
+    {
+        "slug": "sight-words-cards", "tier": "member", "kind": "download",
+        "cover_emoji": "🃏", "sort_order": 14, "file_path": "worksheets/sight-words-cards.pdf",
+        "title": "Sight Words Flashcards: First 25",
+        "excerpt": "Cut-out flashcards for the 25 most common sight words, plus 3 game ideas. Ages 4–6.",
+        "body": """## How to use
+
+1. Print and cut along the dashed lines (cardstock recommended)
+2. Start with 5 words — add 5 more each week
+3. Three games included on the last page: Fast Flash, Word Hunt, Sentence Builder
+
+## The routine
+
+Hold up a card for 2 seconds. Instant read = keep it. Hesitation = back in the pile. A word counts as learned when it's instant 3 days in a row.
+
+> Pair with our *Sight Words Starter* guide for the full method.""",
+    },
 ]
 
 
@@ -262,6 +468,9 @@ def main():
     for local, remote in [
         ("/tmp/worksheets/addition-to-10.pdf", "worksheets/addition-to-10.pdf"),
         ("/tmp/worksheets/counting-coloring.pdf", "worksheets/counting-coloring.pdf"),
+        ("/tmp/worksheets/number-tracing.pdf", "worksheets/number-tracing.pdf"),
+        ("/tmp/worksheets/shapes-colors.pdf", "worksheets/shapes-colors.pdf"),
+        ("/tmp/worksheets/sight-words-cards.pdf", "worksheets/sight-words-cards.pdf"),
     ]:
         r = upload_pdf(sr, local, remote)
         print(" uploaded", remote, "->", r.get("Key") or r.get("key") or "ok")
