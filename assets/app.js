@@ -1,4 +1,4 @@
-/* 趣学岛 FunLearn Island — 前端核心逻辑 */
+/* FunLearn Island — core frontend logic */
 const FN_BASE = window.SUPABASE_URL.replace(/\/$/, "") + "/functions/v1";
 const SITE = "https://yanbing2026.github.io/funlearn-plus";
 
@@ -74,14 +74,14 @@ async function initNav(activePage) {
     const email = session.user.email || "";
     const short = email.split("@")[0];
     box.innerHTML = `<a href="account.html" data-page="account">👤 ${escapeHtml(short)}</a>
-      <a href="#" id="logout-link">退出</a>`;
+      <a href="#" id="logout-link">Sign out</a>`;
     document.getElementById("logout-link").addEventListener("click", async (e) => {
       e.preventDefault();
       await sb.auth.signOut();
       location.href = "index.html";
     });
   } else {
-    box.innerHTML = `<a href="login.html" data-page="login" class="btn btn-sm">登录 / 注册</a>`;
+    box.innerHTML = `<a href="login.html" data-page="login" class="btn btn-sm">Sign in</a>`;
   }
 }
 
@@ -115,31 +115,31 @@ async function startCheckout(plan, btn) {
       location.href = "login.html";
       return;
     }
-    if (btn) { btn.disabled = true; btn.textContent = "正在跳转到支付…"; }
+    if (btn) { btn.disabled = true; btn.textContent = "Redirecting to secure checkout…"; }
     const { url, error } = await callFn("create-checkout", { plan });
     if (error === "stripe_not_configured") {
-      alert("支付通道正在配置中，请稍后再试。");
-      if (btn) { btn.disabled = false; btn.textContent = "重新尝试"; }
+      alert("Payments are being set up. Please try again later.");
+      if (btn) { btn.disabled = false; btn.textContent = "Try again"; }
       return;
     }
     if (!url) throw new Error(error || "no_url");
     location.href = url;
   } catch (e) {
     console.error(e);
-    alert("启动支付失败，请稍后重试。");
-    if (btn) { btn.disabled = false; btn.textContent = "重新尝试"; }
+    alert("Couldn't start checkout. Please try again.");
+    if (btn) { btn.disabled = false; btn.textContent = "Try again"; }
   }
 }
 
 async function openPortal(btn) {
   try {
-    if (btn) { btn.disabled = true; btn.textContent = "正在打开…"; }
+    if (btn) { btn.disabled = true; btn.textContent = "Opening…"; }
     const { url } = await callFn("customer-portal", {});
     location.href = url;
   } catch (e) {
     console.error(e);
-    alert("打开订阅管理失败，请稍后重试。");
-    if (btn) { btn.disabled = false; btn.textContent = "管理订阅"; }
+    alert("Couldn't open subscription management. Please try again later.");
+    if (btn) { btn.disabled = false; btn.textContent = "Manage subscription"; }
   }
 }
 
@@ -156,15 +156,15 @@ async function fetchContent() {
 
 function contentCard(item, locked) {
   const badge = item.tier === "member"
-    ? `<span class="badge member">👑 会员专享</span>`
-    : `<span class="badge free">免费</span>`;
+    ? `<span class="badge member">👑 Members</span>`
+    : `<span class="badge free">Free</span>`;
   const kindIcon = item.kind === "download" ? " 📥" : "";
   return `<a class="content-card" href="read.html?slug=${encodeURIComponent(item.slug)}">
     ${badge}
     <div class="emoji">${escapeHtml(item.cover_emoji || "📚")}</div>
     <h3>${escapeHtml(item.title)}${kindIcon}</h3>
     <p>${escapeHtml(item.excerpt || "")}</p>
-    ${locked && item.tier === "member" ? `<div class="lock-veil"><span class="btn btn-sm">🔒 成为会员后查看</span></div>` : ""}
+    ${locked && item.tier === "member" ? `<div class="lock-veil"><span class="btn btn-sm">🔒 Members only</span></div>` : ""}
   </a>`;
 }
 

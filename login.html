@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>登录 / 注册 — 趣学岛</title>
+<title>Sign in — FunLearn Island</title>
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <a class="logo" href="index.html">🏝️ FunLearn Island</a>
   <div class="nav-links">
-    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
-    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <a href="library.html" data-page="library" class="hide-sm">Library</a>
+    <a href="index.html#pricing" class="hide-sm">Pricing</a>
     <span id="nav-auth"></span>
   </div>
 </div></nav>
@@ -21,21 +21,21 @@
 <div class="wrap">
   <div class="card form-card">
     <div style="font-size:44px">📮</div>
-    <h2 style="margin:10px 0 6px">登录 / 注册</h2>
-    <p style="color:var(--muted);font-size:15px;margin:0">输入邮箱，我们会发一封登录链接<br>无需记住密码</p>
+    <h2 style="margin:10px 0 6px">Sign in / Sign up</h2>
+    <p style="color:var(--muted);font-size:15px;margin:0">Enter your email and we'll send you a sign-in link.<br>No password needed.</p>
     <div id="form-box">
       <input class="field" id="email" type="email" placeholder="you@example.com" autocomplete="email">
-      <button class="btn" id="send-btn" style="width:100%">发送登录链接</button>
+      <button class="btn" id="send-btn" style="width:100%">Send sign-in link</button>
     </div>
     <div id="sent-box" class="hidden">
-      <div class="notice">✅ 登录链接已发送！<br>请查收 <b id="sent-email"></b> 的收件箱<br>（含垃圾邮件文件夹），点击链接完成登录。</div>
-      <button class="btn btn-ghost btn-sm" id="resend-btn">重新发送</button>
+      <div class="notice">✅ Sign-in link sent!<br>Check the inbox of <b id="sent-email"></b> (including spam) and click the link to sign in.</div>
+      <button class="btn btn-ghost btn-sm" id="resend-btn">Resend</button>
     </div>
     <div id="err-box" class="notice warn hidden"></div>
   </div>
 </div>
 
-<footer>© 2026 趣学岛 FunLearn Island</footer>
+<footer>© 2026 FunLearn Island</footer>
 
 <script src="assets/app.js"></script>
 <script>
@@ -53,19 +53,19 @@ initNav("login");
     const errBox = document.getElementById("err-box");
     errBox.classList.add("hidden");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      errBox.textContent = "请输入正确的邮箱地址。";
+      errBox.textContent = "Please enter a valid email address.";
       errBox.classList.remove("hidden");
       return;
     }
     const btn = document.getElementById("send-btn");
-    btn.disabled = true; btn.textContent = "发送中…";
+    btn.disabled = true; btn.textContent = "Sending…";
     const { error } = await sb.auth.signInWithOtp({
       email,
       options: { emailRedirectTo: SITE + "/account.html" },
     });
-    btn.disabled = false; btn.textContent = "发送登录链接";
+    btn.disabled = false; btn.textContent = "Send sign-in link";
     if (error) {
-      errBox.textContent = "发送失败，请稍后重试。";
+      errBox.textContent = "Couldn't send. Please try again later.";
       errBox.classList.remove("hidden");
       return;
     }

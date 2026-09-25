@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>阅读 — 趣学岛</title>
+<title>Read — FunLearn Island</title>
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <a class="logo" href="index.html">🏝️ FunLearn Island</a>
   <div class="nav-links">
-    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
-    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <a href="library.html" data-page="library" class="hide-sm">Library</a>
+    <a href="index.html#pricing" class="hide-sm">Pricing</a>
     <span id="nav-auth"></span>
   </div>
 </div></nav>
 
 <div class="wrap article" id="main" style="padding-bottom:64px">
-  <p style="color:var(--muted);text-align:center;margin-top:60px">加载中…</p>
+  <p style="color:var(--muted);text-align:center;margin-top:60px">Loading…</p>
 </div>
 
-<footer>© 2026 趣学岛 FunLearn Island</footer>
+<footer>© 2026 FunLearn Island</footer>
 
 <script src="assets/app.js"></script>
 <script>
@@ -41,35 +41,35 @@ initNav("library");
     .maybeSingle();
 
   if (!item) {
-    // RLS 会挡住非会员看会员内容 → 显示付费墙
+    // RLS blocks non-members from even seeing members-only rows → show paywall
     main.innerHTML = `
       <div class="paywall" style="margin-top:48px">
         <div class="emoji">🔒</div>
-        <h2>这是会员专享内容</h2>
-        <p>成为趣学岛会员，解锁全部专享文章、可打印教具和每周学习计划。</p>
+        <h2>This is members-only content</h2>
+        <p>Become a FunLearn Island member to unlock all exclusive articles, printable packs, and weekly learning plans.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-          <a class="btn" href="index.html#pricing">查看会员定价</a>
-          <a class="btn btn-ghost" href="library.html">返回内容库</a>
+          <a class="btn" href="index.html#pricing">See membership plans</a>
+          <a class="btn btn-ghost" href="library.html">Back to library</a>
         </div>
       </div>`;
     return;
   }
 
-  document.title = item.title + " — 趣学岛";
+  document.title = item.title + " — FunLearn Island";
   const badge = item.tier === "member"
-    ? `<span class="badge member">👑 会员专享</span>`
-    : `<span class="badge free">免费</span>`;
+    ? `<span class="badge member">👑 Members</span>`
+    : `<span class="badge free">Free</span>`;
 
   let bodyHtml = "";
   if (item.kind === "download") {
     bodyHtml = `
       <div class="article-body" style="text-align:center">
         <div style="font-size:56px">${escapeHtml(item.cover_emoji || "📦")}</div>
-        <h2 style="margin-top:12px">可下载资源</h2>
+        <h2 style="margin-top:12px">Downloadable resource</h2>
         <p style="color:var(--muted)">${escapeHtml(item.excerpt || "")}</p>
         <div style="margin:26px 0">${md(item.body_markdown || "")}</div>
-        <button class="btn btn-teal" id="dl-btn">📥 下载 PDF</button>
-        <p style="font-size:13px;color:var(--muted);margin-top:14px">下载链接 5 分钟内有效，请尽快保存</p>
+        <button class="btn btn-teal" id="dl-btn">📥 Download PDF</button>
+        <p style="font-size:13px;color:var(--muted);margin-top:14px">The download link is valid for 5 minutes — please save it soon</p>
       </div>`;
   } else {
     bodyHtml = `<div class="article-body">${md(item.body_markdown || "")}</div>`;
@@ -79,21 +79,21 @@ initNav("library");
     <div class="article-head">${badge}<h1>${escapeHtml(item.title)}</h1>
     <div class="meta">${escapeHtml(item.excerpt || "")}</div></div>
     ${bodyHtml}
-    <p style="text-align:center;margin-top:32px"><a href="library.html" style="color:var(--muted)">← 返回内容库</a></p>`;
+    <p style="text-align:center;margin-top:32px"><a href="library.html" style="color:var(--muted)">← Back to library</a></p>`;
 
   const dlBtn = document.getElementById("dl-btn");
   if (dlBtn) {
     dlBtn.addEventListener("click", async () => {
-      dlBtn.disabled = true; dlBtn.textContent = "正在生成下载链接…";
+      dlBtn.disabled = true; dlBtn.textContent = "Generating download link…";
       try {
         const url = await signedDownloadUrl(item.file_path);
         const a = document.createElement("a");
         a.href = url; a.download = item.slug + ".pdf";
         document.body.appendChild(a); a.click(); a.remove();
-        dlBtn.disabled = false; dlBtn.textContent = "📥 下载 PDF";
+        dlBtn.disabled = false; dlBtn.textContent = "📥 Download PDF";
       } catch (e) {
-        dlBtn.disabled = false; dlBtn.textContent = "📥 下载 PDF";
-        alert("下载失败，请确认会员状态后重试。");
+        dlBtn.disabled = false; dlBtn.textContent = "📥 Download PDF";
+        alert("Download failed. Please check your membership and try again.");
       }
     });
   }

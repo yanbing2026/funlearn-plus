@@ -1,51 +1,49 @@
-# 趣学岛 FunLearn Island 🏝️
+# FunLearn Island 🏝️
 
-专为 3–6 岁家庭打造的**付费会员制学习资源站**。
+A **membership-based learning resource site** for families with kids ages 3–6. Targets US parents.
 
-- **托管**：GitHub Pages（纯静态）
-- **后端**：Supabase（Auth + Postgres + Storage + Edge Functions）
-- **支付**：Stripe 订阅（月度 $8 / 年度 $68），Webhook 自动同步会员状态
+- **Hosting**: GitHub Pages (static only)
+- **Backend**: Supabase (Auth + Postgres + Storage + Edge Functions)
+- **Payments**: Stripe subscriptions ($8/mo, $68/yr); webhooks sync membership status automatically
 
-## 线上地址
+## Live site
 
 https://yanbing2026.github.io/funlearn-plus
 
-## 本地结构
+## Layout
 
 ```
-index.html          首页（含定价）
-login.html          邮箱验证码登录
-library.html        内容库（RLS 控制可见性）
-read.html           文章/下载阅读页
-account.html        我的账户（订阅管理）
-assets/             样式、前端逻辑、Supabase 公钥配置
+index.html          Landing page (with pricing)
+login.html          Passwordless email-link sign-in
+library.html        Content library (visibility enforced by RLS)
+read.html           Article / download reader
+account.html        My account (subscription management)
+assets/             Styles, frontend logic, Supabase public config
 supabase/
-  migrations/       数据库表 + RLS + Storage
+  migrations/       DB tables + RLS + Storage bucket
   functions/        create-checkout / stripe-webhook / customer-portal
-  deploy_functions.py   函数部署脚本
-  seed_content.py       示例内容 seed
+  deploy_functions.py   Function deploy script (Management API)
+  seed_content.py       Sample content seeder
+  make_worksheets.py    Sample printable PDF generator
 ```
 
-## 部署
+## Deploy
 
 ```bash
-# 1. 数据库
-python3 - <<'EOF'
-# 把 supabase/migrations/009_membership_site.sql 通过 sb 以 JSON 包一层执行
-EOF
-
-# 2. Edge Functions
+# 1. Database: run supabase/migrations/009_membership_site.sql via the sb CLI
+# 2. Edge Functions:
 python3 supabase/deploy_functions.py
-
-# 3. Secrets（Supabase Dashboard → Edge Functions → Secrets）
-STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET / PRICE_MONTHLY / PRICE_YEARLY / SITE_URL
-
-# 4. 推送本目录到 GitHub，Pages 自动发布
+# 3. Secrets (Supabase Dashboard → Edge Functions → Secrets):
+#    STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET / PRICE_MONTHLY / PRICE_YEARLY / SITE_URL
+# 4. Seed sample content:
+python3 supabase/seed_content.py
+# 5. Push this directory to GitHub — Pages publishes automatically
+python3 ~/workspace/skills/github/bin/gh-push yanbing2026/funlearn-plus ~/workspace/funlearn-plus
 ```
 
-## 接入 Stripe（测试）
+## Stripe wiring (test mode)
 
-1. Stripe Dashboard 建两个 Product/Price（月度、年度，USD）
-2. 把 Price ID 写入 Edge Function Secrets（`PRICE_MONTHLY` / `PRICE_YEARLY`）
-3. 在 Stripe 建 Webhook Endpoint → `https://sjqhcpbdgaeapljbllhp.supabase.co/functions/v1/stripe-webhook`，把 signing secret 写入 `STRIPE_WEBHOOK_SECRET`
-4. 用测试卡 `4242 4242 4242 4242` 走一遍订阅流程
+1. Create two Products/Prices in the Stripe Dashboard (monthly, annual, USD)
+2. Save the Price IDs as Edge Function secrets `PRICE_MONTHLY` / `PRICE_YEARLY`
+3. Create a Webhook Endpoint → `https://sjqhcpbdgaeapljbllhp.supabase.co/functions/v1/stripe-webhook`, save the signing secret as `STRIPE_WEBHOOK_SECRET`
+4. Run a full subscription flow with test card `4242 4242 4242 4242`

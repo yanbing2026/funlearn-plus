@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""上传示例 PDF 到 member-files bucket，并在 content_items 中 seed 6 篇内容。
+"""上传示例 PDF 到 member-files bucket，并在 content_items 中 seed 6 篇英文内容。
 service_role key 仅在内存中使用，不打印、不落盘。
 """
 import json
@@ -55,199 +55,199 @@ ITEMS = [
     {
         "slug": "daily-10-min-reading", "tier": "free", "kind": "article",
         "cover_emoji": "📖", "sort_order": 1,
-        "title": "每天10分钟，陪娃爱上认字",
-        "excerpt": "不用报班、不买一堆卡片，抓住三个生活场景，认字变成亲子游戏。",
-        "body": """## 为什么是 10 分钟？
+        "title": "The 10-Minute Rule: Helping Your Preschooler Fall in Love with Letters",
+        "excerpt": "No classes, no stacks of flashcards — three everyday moments that turn letter learning into a game.",
+        "body": """## Why 10 minutes?
 
-学龄前孩子的专注力一次只有 10–15 分钟。与其周末突击一小时，不如每天睡前 10 分钟，效果反而更好——**高频短时**是这个年龄段记忆的黄金法则。
+A preschooler's focused attention lasts 10–15 minutes at a time. A calm 10 minutes every evening beats a forced one-hour weekend session — **short and frequent** is the golden rule for memory at this age.
 
-## 三个随时可用的方法
+## Three methods you can use tonight
 
-### 1. 指读：把绘本变成认字课
-读绘本时用手指着字读，读到关键词时停顿，让孩子说出那个字。不用全篇指读，每天挑 3–5 个词就够了。
+### 1. Point-and-read: turn picture books into letter lessons
+Point at the words as you read. Pause on key words and let your child say them. No need to point at everything — 3–5 words a day is plenty.
 
-### 2. 生活认字：把世界当识字卡
-- 电梯里的数字、楼层
-- 超市里的水果标签
-- 红绿灯、路牌、店招
+### 2. Real-world letters: the world is your flashcard
+- Elevator numbers and floor signs
+- Fruit labels at the grocery store
+- Traffic lights, street signs, store names
 
-看到就读出来，孩子会觉得认字是"有用的本事"，而不是作业。
+Read them aloud when you see them. Kids learn fastest when letters feel **useful**, not like homework.
 
-### 3. 游戏化：猜字、找字、贴字
-把生字写在便签纸上贴在家里，玩"寻宝游戏"：说出一个字，全家一起找。找对了就撕下来，集满 10 张换一个小奖励。
+### 3. Make it a game: guess, find, stick
+Write new words on sticky notes around the house and play treasure hunt: call out a word, everyone races to find it. Find all 10 and earn a small reward.
 
-## 三个坑别踩
+## Three traps to avoid
 
-- **别考孩子**："这个字念什么？"天天考，孩子很快就烦。改成"你来当小老师教我"。
-- **别贪多**：一天 3–5 个新字足够，复习旧字更重要。
-- **别比较**："隔壁小孩都认识 500 个了"——这句话对认字速度没有任何帮助。
+- **Don't quiz**: "What does this say?" every day kills the fun fast. Try "Can you be my teacher and teach me?" instead.
+- **Don't overload**: 3–5 new words a day is enough. Reviewing old ones matters more.
+- **Don't compare**: "The neighbor's kid knows 500 words already" has never sped up anyone's learning.
 
-> 记住：目标不是认多少字，而是让孩子觉得**字是好玩的**。兴趣在了，速度自然来。""",
+> Remember: the goal isn't word count — it's making your child feel that **letters are fun**. Interest first, speed follows.""",
     },
     {
         "slug": "blockquest-family-guide", "tier": "free", "kind": "article",
         "cover_emoji": "🎮", "sort_order": 2,
-        "title": "BlockQuest 家庭玩法：把游戏时间变成学习时间",
-        "excerpt": "孩子爱玩方块游戏？三招把它变成认字、数数和专注力训练。",
-        "body": """## 先说结论
+        "title": "BlockQuest Family Guide: Turn Game Time into Learning Time",
+        "excerpt": "Your kid loves block games? Three moves that turn them into letter, counting, and focus practice.",
+        "body": """## The short version
 
-堵不如疏。孩子天生爱玩方块、搭建、探索类的游戏，关键是**家长怎么参与**。下面三招，今晚就能用。
+Blocking the game doesn't work — channeling it does. Kids are wired to love building and exploring. What matters is **how you join in**. Three moves, usable tonight.
 
-## 第一招：任务卡玩法
+## Move 1: Mission cards
 
-别让孩子漫无目的地挖矿。提前写 3 张任务卡：
+Don't let them mine aimlessly. Write 3 mission cards in advance:
 
-- ⛏️ 收集 10 个木块（数数）
-- 🏠 盖一座有 2 扇窗户的房子（形状+计数）
-- 🌻 种 5 朵花并给它们起名字（认字+表达）
+- ⛏️ Collect 10 wood blocks (counting)
+- 🏠 Build a house with 2 windows (shapes + counting)
+- 🌻 Plant 5 flowers and name each one (letters + expression)
 
-完成一张就打勾。游戏还是那个游戏，但多了目标感和成就感。
+Check one off when done. Same game — but now with goals and a sense of achievement.
 
-## 第二招：家长当"记者"
+## Move 2: Be the "reporter"
 
-在旁边别只说"别玩了"。试试当记者采访：
+Instead of "stop playing," try interviewing:
 
-- "你盖的这是什么？能带我参观一下吗？"（表达）
-- "这个桥有多长？你数数用了几块？"（数学）
-- "如果下雨了，你的房子怎么办？"（解决问题）
+- "What did you build? Can you give me a tour?" (expression)
+- "How long is this bridge? Count the blocks you used." (math)
+- "What happens to your house if it rains?" (problem solving)
 
-孩子讲得越起劲，语言和思维锻炼得越多。
+The more they explain, the more language and thinking get exercised.
 
-## 第三招：定好规则再开始
+## Move 3: Set the rules before you start
 
-- **计时器**：用番茄钟，25 分钟一局，时间到就存档退出
-- **先任务后自由**：完成任务卡才能自由建造
-- **全家复盘**：结束时每人说一个今天最满意的作品
+- **Timer**: 25 minutes a round with a kitchen timer — save and stop when it rings
+- **Missions first**: free building unlocks after mission cards are done
+- **Family recap**: everyone shares their favorite build at the end
 
-> 游戏时间不是学习的敌人，**无陪伴的游戏时间才是**。你参与的 25 分钟，胜过孩子独自玩的 2 小时。""",
+> Game time isn't the enemy of learning — **unsupervised** game time is. Your 25 engaged minutes beat two hours of solo play.""",
     },
     {
         "slug": "math-roadmap-3-6", "tier": "member", "kind": "article",
         "cover_emoji": "🔢", "sort_order": 3,
-        "title": "3–6岁数学思维路线图：从数数到加减法",
-        "excerpt": "每个阶段练什么、怎么练、练到什么程度算达标，一张图讲清楚。",
-        "body": """## 总览：四个阶段
+        "title": "Math Roadmap for Ages 3–6: From Counting to Addition",
+        "excerpt": "What to practice at each stage, how to practice it, and what 'done' looks like — all on one page.",
+        "body": """## Overview: four stages
 
-- **3岁**：点数 1–10，一一对应
-- **4岁**：10 以内唱数、倒数，理解"几个"
-- **5岁**：10 以内加减，凑十法启蒙
-- **6岁**：20 以内加减，简单应用题
+- **Age 3**: count 1–10 with one-to-one correspondence
+- **Age 4**: count forward and backward to 10, grasp "how many"
+- **Age 5**: add and subtract within 10, intro to making-ten
+- **Age 6**: add and subtract within 20, simple word problems
 
-超前不是目标，**扎实**才是。每个阶段的地基没打牢，后面都要返工。
+Getting ahead isn't the goal — **solid foundations** are. A shaky stage now means rework later.
 
-## 3岁：点数与一一对应
+## Age 3: counting with one-to-one correspondence
 
-核心能力：手口一致点数，知道"数到几就是几个"。
+Core skill: touch each object once while counting, and know the last number is the total.
 
-**玩法**：上楼梯数台阶、吃饭数勺子、散步数小狗。关键是**用手指一个一个点着数**，不要只动嘴。
+**Play**: count stairs, spoons at dinner, dogs on a walk. The key: **point with a finger**, don't just chant.
 
-**达标**：能点数 10 个以内的任意物品，说出总数。
+**Done when**: can count any set of up to 10 objects and say the total.
 
-## 4岁：数的顺序与大小
+## Age 4: number order and size
 
-核心能力：正数倒数都流利，知道 7 比 5 大。
+Core skill: fluent forward and backward counting, knowing 7 is bigger than 5.
 
-**玩法**：
-- 玩扑克牌比大小（只用 1–10）
-- 骰子游戏：掷到几走几步
-- "我藏了几个"：手里藏几颗糖，让孩子猜，再验证
+**Play**:
+- Card game "War" with 1–10 only
+- Dice games: roll and move that many steps
+- "How many am I hiding?": hide candies in your hand, guess, then check
 
-**达标**：能从任意数正数到 10、倒数到 1；能比较两组物品多少。
+**Done when**: can count up to 10 and back down from any starting number; can compare two groups.
 
-## 5岁：10 以内加减
+## Age 5: addition and subtraction within 10
 
-核心能力：理解加是"合起来"、减是"拿走"。
+Core skill: addition means "put together," subtraction means "take away."
 
-**玩法**：
-- 分糖果："你有 3 颗，我再给你 2 颗，现在几颗？"
-- 玩具买卖：用积木当钱，买东西找零（只用 10 以内）
-- 打印我们的《10以内加法练习卡》，每天 5 道题
+**Play**:
+- Sharing snacks: "You have 3, I give you 2 more — how many now?"
+- Toy store: use blocks as money, practice paying and change (within 10)
+- Print our *Addition Practice* pack — 5 problems a day
 
-**达标**：10 以内加减口算基本脱口而出，理解凑十（8+5 = 8+2+3）。
+**Done when**: near-instant recall of sums within 10; understands making ten (8+5 = 8+2+3).
 
-## 6岁：20 以内与应用题
+## Age 6: within 20 and word problems
 
-核心能力：20 以内加减，生活中的简单应用题。
+Core skill: add/subtract within 20, solve simple real-life word problems.
 
-**玩法**：购物实战——给孩子 20 元预算买水果，让他自己算。真实场景的学习效果是练习册的 10 倍。
+**Play**: real grocery runs — give your child a $20 budget for fruit and let them do the math. Real contexts teach 10× better than worksheets.
 
-## 家长自查清单
+## Parent self-check
 
-- [ ] 孩子数数是"点着数"还是"背儿歌"？
-- [ ] 孩子知道"5"代表 5 个东西吗？
-- [ ] 加减法是靠掰手指还是已经内化？
-- [ ] 孩子觉得数学好玩吗？
+- [ ] Does my child count by pointing, or just chant?
+- [ ] Does my child know "5" means five things?
+- [ ] Is addition finger-counting or internalized?
+- [ ] Does my child think math is fun?
 
-> 如果第四个答案是否定的，先停下来，回到游戏。**兴趣是 1，其他都是后面的 0。**""",
+> If the last answer is no, pause and go back to games. **Interest is the 1; everything else is a 0 after it.**""",
     },
     {
         "slug": "addition-worksheet", "tier": "member", "kind": "download",
         "cover_emoji": "➕", "sort_order": 4, "file_path": "worksheets/addition-to-10.pdf",
-        "title": "10以内加法练习卡",
-        "excerpt": "40 道 10 以内加法，A4 打印即用，适合 5–6 岁。",
-        "body": """## 这份教具怎么用
+        "title": "Addition Practice: Numbers to 10",
+        "excerpt": "40 addition problems within 10. Print on A4 and go — ideal for ages 5–6.",
+        "body": """## How to use this pack
 
-- **打印**：A4 纸直接打印，建议用 120g 以上纸张，孩子写字不洇墨
-- **节奏**：每天 1 页（20 道），5 分钟完成，不要一次刷完
-- **批改**：当场批改，错题用红笔圈出来，第二天先重做错题
+- **Print**: A4, any home printer. Heavier paper (32 lb+) feels better for little hands.
+- **Pace**: one page (20 problems) a day, about 5 minutes. Don't binge it.
+- **Review**: check answers together right away. Circle mistakes in red and redo them first the next day.
 
-## 配套玩法：口算接龙
+## Bonus game: flashcard relay
 
-打印后剪成小卡片，全家玩接龙：大人出一张，孩子答对了就下一张，答错了放回牌堆。集满 10 张全对，兑换一个小心愿。
+Cut the page into cards and play as a family: you show a card, your child answers. Correct → next card; wrong → back in the pile. Ten in a row earns a small wish.
 
-> 熟练标准：20 道题 5 分钟内全对，就可以进入 20 以内加减了。""",
+> Mastery bar: 20 problems, all correct, in under 5 minutes — then you're ready for addition within 20.""",
     },
     {
         "slug": "counting-coloring", "tier": "member", "kind": "download",
         "cover_emoji": "🎨", "sort_order": 5, "file_path": "worksheets/counting-coloring.pdf",
-        "title": "数数涂色卡",
-        "excerpt": "数一数、写一写、涂一涂，3–4 岁点数启蒙必备。",
-        "body": """## 这份教具怎么用
+        "title": "Count & Color Worksheets",
+        "excerpt": "Count, write, and color — the essential one-to-one correspondence starter for ages 3–4.",
+        "body": """## How to use this pack
 
-- **第一步数**：让孩子用手指一个一个点着数图形
-- **第二步写**：在方框里写下数字（写不好没关系，描一遍也行）
-- **第三步涂**：按自己的喜好涂色，涂完贴在冰箱上展示
+- **Step 1 — count**: have your child point at each shape and count, one by one
+- **Step 2 — write**: write the number in the box (tracing is fine if writing is hard)
+- **Step 3 — color**: color however they like, then put it on the fridge
 
-## 家长注意
+## A note for parents
 
-这个阶段**不要纠正握笔姿势以外的任何事**。数错了就笑着再数一遍，重点是"数"这个动作本身，不是答案。
+At this stage, **don't correct anything except pencil grip**. Counted wrong? Smile and count again together. The *act* of counting matters more than the answer.
 
-> 完成后可以问："你涂的是什么颜色？为什么选这个颜色？"——把数学时间自然过渡到表达练习。""",
+> When done, ask: "What color did you choose? Why that one?" — a natural bridge from math time into expression practice.""",
     },
     {
         "slug": "weekly-plan", "tier": "member", "kind": "article",
         "cover_emoji": "🗓️", "sort_order": 6,
-        "title": "一周陪伴计划：职场爸妈的高效陪娃方案",
-        "excerpt": "工作日每天 15 分钟，周末 1 小时，一周陪伴这样安排最省心。",
-        "body": """## 核心理念
+        "title": "The Working Parent's Weekly Plan: 15 Minutes a Day",
+        "excerpt": "15 minutes on weekdays, one hour on weekends — a no-stress rhythm that actually sticks.",
+        "body": """## The core idea
 
-陪伴质量 = **专注度 × 规律性**，和时长关系不大。每天雷打不动的 15 分钟，胜过周末心血来潮的三小时。
+Quality of time together = **focus × consistency**. Fifteen unmissable minutes a day beats an ambitious three-hour weekend session.
 
-## 工作日（每天 15 分钟）
+## Weekdays (15 minutes each)
 
-- **周一 · 认字日**：睡前指读绘本，认 3 个新词
-- **周二 · 数学日**：扑克牌比大小 / 骰子游戏
-- **周三 · 表达日**："今天最开心的三件事"分享
-- **周四 · 动手日**：剪纸、折纸、搭积木（二选一）
-- **周五 · 电影夜**：一起看 20 分钟动画片，讨论剧情
+- **Mon · Letters**: point-and-read at bedtime, 3 new words
+- **Tue · Math**: card game War / dice games
+- **Wed · Expression**: share "three favorite moments of the day"
+- **Thu · Hands-on**: paper cutting, origami, or building blocks (pick one)
+- **Fri · Movie night**: watch 20 minutes together, talk about the story
 
-固定在**睡前**进行，形成仪式感，孩子会主动期待。
+Anchor it to **bedtime** — rituals create anticipation, and kids will start asking for it.
 
-## 周末（每天 1 小时）
+## Weekends (one hour each)
 
-- **周六上午**：户外探索（公园找落叶、数台阶、认路牌）
-- **周日下午**：厨房小帮手（洗菜、摆碗筷、数人数拿筷子）
+- **Saturday morning**: outdoor exploring (find leaves, count steps, read signs)
+- **Sunday afternoon**: kitchen helper (wash veggies, set the table, count chopsticks)
 
-户外和家务都是天然的学习场景，不用额外准备教具。
+The outdoors and the kitchen are natural classrooms — no prep needed.
 
-## 执行小技巧
+## Tips that make it stick
 
-1. **打印出来贴冰箱**：看得见的计划才会被执行
-2. **全家统一**：爸爸妈妈、爷爷奶奶用同一套，避免孩子钻空子
-3. **打卡不苛责**：出差、加班断了就断了，第二天接着来，不用"补"
-4. **每月复盘**：月底问孩子"这个月最喜欢哪一天的活动"，下个月多安排
+1. **Print it and stick it on the fridge**: a visible plan gets followed
+2. **One plan for the whole family**: parents and grandparents on the same page
+3. **Don't "make up" missed days**: travel or overtime happens — just pick up tomorrow
+4. **Monthly retro**: ask your child which day they liked best, and do more of that
 
-> 最好的早教，是**可坚持的**早教。这份计划先执行两周，再根据孩子的反应微调。""",
+> The best early education is the **sustainable** kind. Run this plan for two weeks, then tune it to your child's reactions.""",
     },
 ]
 

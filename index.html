@@ -1,97 +1,97 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>趣学岛 FunLearn Island — 3–6岁家庭会员制学习资源</title>
-<meta name="description" content="专为3–6岁家庭打造的会员制学习资源：精选文章、可打印教具、每周学习计划。">
+<title>FunLearn Island — Membership Learning Resources for Ages 3–6</title>
+<meta name="description" content="A membership library of learning resources for families with kids ages 3–6: guides, printable worksheets, and weekly learning plans.">
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <a class="logo" href="index.html">🏝️ FunLearn Island</a>
   <div class="nav-links">
-    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
-    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <a href="library.html" data-page="library" class="hide-sm">Library</a>
+    <a href="index.html#pricing" class="hide-sm">Pricing</a>
     <span id="nav-auth"></span>
   </div>
 </div></nav>
 
 <header class="hero wrap">
-  <span class="kicker">专为 3–6 岁家庭打造</span>
-  <h1>把每天 10 分钟<br>变成孩子爱上学习的时光</h1>
-  <p class="sub">趣学岛是会员制的儿童学习资源库：精选陪伴指南、可打印教具、每周学习计划，帮忙碌的家长高效陪娃。</p>
+  <span class="kicker">Built for families with kids ages 3–6</span>
+  <h1>Turn 10 minutes a day<br>into your child's favorite learning time</h1>
+  <p class="sub">FunLearn Island is a membership library of kids' learning resources: practical guides, printable worksheets, and weekly plans that help busy parents make every minute count.</p>
   <div class="hero-cta">
-    <a class="btn" href="library.html">免费体验内容</a>
-    <a class="btn btn-ghost" href="#pricing">成为会员 👑</a>
+    <a class="btn" href="library.html">Explore free content</a>
+    <a class="btn btn-ghost" href="#pricing">Become a member 👑</a>
   </div>
   <div class="hero-stats">
-    <div><b>📚</b><span>精选学习资源持续更新</span></div>
-    <div><b>🖨️</b><span>可打印教具直接下载</span></div>
-    <div><b>🔒</b><span>随时取消，按月付费</span></div>
+    <div><b>📚</b><span>Curated resources, updated weekly</span></div>
+    <div><b>🖨️</b><span>Printable worksheets &amp; flashcards</span></div>
+    <div><b>🔒</b><span>Cancel anytime, monthly billing</span></div>
   </div>
 </header>
 
 <section class="section wrap">
-  <h2>会员可以得到什么</h2>
-  <p class="lede">一份订阅，解锁全部会员资源</p>
+  <h2>What members get</h2>
+  <p class="lede">One subscription unlocks the entire library</p>
   <div class="grid grid-3">
-    <div class="card"><div class="emoji">📚</div><h3>会员专享文库</h3><p>认字、数学、专注力、习惯养成——按年龄整理的实战指南，全部解锁。</p></div>
-    <div class="card"><div class="emoji">🖨️</div><h3>可打印教具包</h3><p>练习卡、闪卡、游戏棋盘，PDF 高清打印，在家就能开小课堂。</p></div>
-    <div class="card"><div class="emoji">🗓️</div><h3>每周学习计划</h3><p>每天 10 分钟的陪伴清单，照着做就行，不用再到处找资源。</p></div>
+    <div class="card"><div class="emoji">📚</div><h3>Members-only library</h3><p>Letters, math, focus, and habits — practical guides organized by age, all unlocked.</p></div>
+    <div class="card"><div class="emoji">🖨️</div><h3>Printable activity packs</h3><p>Practice sheets, flashcards, and game boards as crisp PDFs. Print at home and start your own mini classroom.</p></div>
+    <div class="card"><div class="emoji">🗓️</div><h3>Weekly learning plans</h3><p>A 10-minute-a-day checklist for parents. Just follow along — no more hunting for resources.</p></div>
   </div>
 </section>
 
 <section class="section wrap">
-  <h2>先免费看看</h2>
-  <p class="lede">这些内容完全免费，登录即可阅读</p>
-  <div class="grid grid-3" id="free-grid"><p style="color:var(--muted)">加载中…</p></div>
-  <p style="text-align:center;margin-top:28px"><a class="btn btn-ghost" href="library.html">浏览全部内容 →</a></p>
+  <h2>Start free</h2>
+  <p class="lede">These are completely free — no account needed to browse</p>
+  <div class="grid grid-3" id="free-grid"><p style="color:var(--muted)">Loading…</p></div>
+  <p style="text-align:center;margin-top:28px"><a class="btn btn-ghost" href="library.html">Browse all content →</a></p>
 </section>
 
 <section class="section wrap" id="pricing">
-  <h2>会员定价</h2>
-  <p class="lede">一杯奶茶钱，换孩子一周的高质量陪伴</p>
+  <h2>Membership pricing</h2>
+  <p class="lede">Less than a latte a month — for a week of quality time with your child</p>
   <div class="grid grid-2" style="max-width:760px;margin:0 auto">
     <div class="card price-card">
-      <div class="plan-name">月度会员</div>
-      <div class="price">$8<small>/月</small></div>
+      <div class="plan-name">Monthly</div>
+      <div class="price">$8<small>/month</small></div>
       <ul>
-        <li>全部会员文章无限读</li>
-        <li>全部可打印教具下载</li>
-        <li>每周学习计划</li>
-        <li>随时取消</li>
+        <li>Unlimited members-only articles</li>
+        <li>All printable packs &amp; downloads</li>
+        <li>Weekly learning plans</li>
+        <li>Cancel anytime</li>
       </ul>
-      <button class="btn btn-ghost" onclick="startCheckout('monthly', this)">按月订阅</button>
+      <button class="btn btn-ghost" onclick="startCheckout('monthly', this)">Subscribe monthly</button>
     </div>
     <div class="card price-card featured">
-      <span class="save-tag">省 29% · 最受欢迎</span>
-      <div class="plan-name">年度会员 👑</div>
-      <div class="price">$68<small>/年</small></div>
+      <span class="save-tag">Save 29% · Most popular</span>
+      <div class="plan-name">Annual 👑</div>
+      <div class="price">$68<small>/year</small></div>
       <ul>
-        <li>包含月度会员全部权益</li>
-        <li>新资源优先体验</li>
-        <li>平均每天不到 $0.2</li>
-        <li>随时取消，按比例无忧</li>
+        <li>Everything in Monthly</li>
+        <li>Early access to new resources</li>
+        <li>Less than $0.20 a day</li>
+        <li>Cancel anytime, no hassle</li>
       </ul>
-      <button class="btn" onclick="startCheckout('yearly', this)">按年订阅</button>
+      <button class="btn" onclick="startCheckout('yearly', this)">Subscribe annual</button>
     </div>
   </div>
-  <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:22px">通过 Stripe 安全支付 · 支持 Visa / Mastercard / 银联 · 随时取消</p>
+  <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:22px">Secure payment via Stripe · Visa / Mastercard / Amex · Cancel anytime</p>
 </section>
 
 <section class="section wrap faq" style="max-width:760px">
-  <h2>常见问题</h2>
+  <h2>FAQ</h2>
   <p class="lede"> </p>
-  <details><summary>内容适合多大孩子？</summary><p>主要面向 3–6 岁学龄前儿童，每份资源都会标注建议年龄和玩法说明。</p></details>
-  <details><summary>可以随时取消吗？</summary><p>可以。在「我的账户」里自助管理订阅，取消后会员权益保留到当前周期结束，不再续费。</p></details>
-  <details><summary>可打印教具怎么用？</summary><p>会员可直接下载 PDF，用家用打印机或去打印店打印即可，推荐 200g 以上卡纸打印闪卡。</p></details>
-  <details><summary>付款安全吗？</summary><p>支付由 Stripe 处理，我们不会存储你的银行卡信息。登录采用邮箱验证码，无需记密码。</p></details>
+  <details><summary>What ages is this for?</summary><p>Primarily ages 3–6 (preschool through kindergarten). Every resource notes the recommended age and how to play.</p></details>
+  <details><summary>Can I cancel anytime?</summary><p>Yes. Manage your subscription from "My Account" — it stays active until the end of the current billing period, then simply doesn't renew.</p></details>
+  <details><summary>How do the printables work?</summary><p>Members download PDFs directly and print at home or at a print shop. We recommend cardstock (65 lb+) for flashcards.</p></details>
+  <details><summary>Is payment secure?</summary><p>Payments are processed by Stripe — we never see or store your card details. Sign-in is passwordless via an email link.</p></details>
 </section>
 
-<footer>© 2026 趣学岛 FunLearn Island · 用心陪伴每一天 🌱</footer>
+<footer>© 2026 FunLearn Island · Make every day count 🌱</footer>
 
 <script src="assets/app.js"></script>
 <script>
@@ -100,8 +100,8 @@ initNav("home");
   try {
     const items = (await fetchContent()).filter(i => i.tier === "free").slice(0, 3);
     document.getElementById("free-grid").innerHTML =
-      items.map(i => contentCard(i, false)).join("") || "<p>敬请期待…</p>";
-  } catch (e) { document.getElementById("free-grid").innerHTML = "<p>加载失败，请刷新重试。</p>"; }
+      items.map(i => contentCard(i, false)).join("") || "<p>Coming soon…</p>";
+  } catch (e) { document.getElementById("free-grid").innerHTML = "<p>Couldn't load. Please refresh.</p>"; }
 })();
 </script>
 </body>
