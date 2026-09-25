@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的账户 — 趣学岛</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <div class="nav-links">
+    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
+    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <span id="nav-auth"></span>
+  </div>
+</div></nav>
+
+<div class="wrap" style="padding-bottom:64px">
+  <div id="main"><p style="text-align:center;color:var(--muted);margin-top:60px">加载中…</p></div>
+</div>
+
+<footer>© 2026 趣学岛 FunLearn Island</footer>
+
+<script src="assets/app.js"></script>
+<script>
+initNav("account");
+
+const PLAN_NAMES = { monthly: "月度会员", yearly: "年度会员" };
+const STATUS_NAMES = {
+  active: "有效", trialing: "试用中", past_due: "支付异常",
+  canceled: "已取消", inactive: "未订阅",
+};
+
+function fmtDate(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+(async () => {
+  const main = document.getElementById("main");
+  const params = new URLSearchParams(location.search);
+  const { session, membership, active } = await getMembership();
+
+  if (!session) { location.href = "login.html"; return; }
+
+  // 支付成功回来：等 webhook 同步，最多轮询 ~12 秒
+  let justPaid = params.get("checkout") === "success";
+  if (justPaid && !active) {
+    for (let i = 0; i < 6; i++) {
+      await new Promise(r => setTimeout(r, 2000));
+      const s = await getMembership();
+      if (s.active) { location.search = ""; return; }
+    }
+  }
+
+  const email = session.user.email || "";
+  const m = membership;
+  const pill = active
+    ? `<span class="status-pill on">👑 会员有效</span>`
+    : `<span class="status-pill off">尚未订阅</span>`;
+
+  let actionHtml = "";
+  if (active) {
+    actionHtml = `
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+        <button class="btn btn-ghost btn-sm" onclick="openPortal(this)">管理订阅 / 取消</button>
+        <a class="btn btn-teal btn-sm" href="library.html">去内容库 →</a>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px">如需取消，在订阅管理中操作即可，权益保留到当前周期结束。</p>`;
+  } else {
+    const sub = params.get("subscribe") || localStorage.getItem("pending_plan");
+    if (sub === "monthly" || sub === "yearly") {
+      localStorage.removeItem("pending_plan");
+      startCheckout(sub);
+      main.innerHTML = `<div class="card form-card"><p>正在为你跳转到安全支付…</p></div>`;
+      return;
+    }
+    actionHtml = `
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+        <button class="btn btn-sm" onclick="startCheckout('monthly', this)">订阅月度 $8/月</button>
+        <button class="btn btn-sm" onclick="startCheckout('yearly', this)">订阅年度 $68/年 👑</button>
+      </div>`;
+  }
+
+  main.innerHTML = `
+    <div class="card" style="max-width:640px;margin:48px auto">
+      ${justPaid ? `<div class="notice">🎉 支付成功！欢迎加入趣学岛会员。</div>` : ""}
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+        <div style="font-size:40px">👤</div>
+        <div><b>${escapeHtml(email)}</b><br>${pill}</div>
+      </div>
+      <div class="kv"><span>当前方案</span><b>${m && m.plan_id ? (PLAN_NAMES[m.plan_id] || m.plan_id) : "—"}</b></div>
+      <div class="kv"><span>订阅状态</span><b>${STATUS_NAMES[m?.status] || "未订阅"}</b></div>
+      <div class="kv"><span>本期有效期至</span><b>${fmtDate(m?.current_period_end)}</b></div>
+      <div class="kv"><span>到期自动续费</span><b>${m?.cancel_at_period_end ? "否（本期结束后停止）" : (active ? "是" : "—")}</b></div>
+      ${actionHtml}
+      <div style="margin-top:26px;border-top:1px dashed var(--line);padding-top:16px">
+        <a href="#" id="logout" style="color:var(--muted);font-size:14px">退出登录</a>
+      </div>
+    </div>`;
+
+  document.getElementById("logout").addEventListener("click", async (e) => {
+    e.preventDefault();
+    await sb.auth.signOut();
+    location.href = "index.html";
+  });
+})();
+</script>
+</body>
+</html>

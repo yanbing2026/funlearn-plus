@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>趣学岛 FunLearn Island — 3–6岁家庭会员制学习资源</title>
+<meta name="description" content="专为3–6岁家庭打造的会员制学习资源：精选文章、可打印教具、每周学习计划。">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <div class="nav-links">
+    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
+    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <span id="nav-auth"></span>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <span class="kicker">专为 3–6 岁家庭打造</span>
+  <h1>把每天 10 分钟<br>变成孩子爱上学习的时光</h1>
+  <p class="sub">趣学岛是会员制的儿童学习资源库：精选陪伴指南、可打印教具、每周学习计划，帮忙碌的家长高效陪娃。</p>
+  <div class="hero-cta">
+    <a class="btn" href="library.html">免费体验内容</a>
+    <a class="btn btn-ghost" href="#pricing">成为会员 👑</a>
+  </div>
+  <div class="hero-stats">
+    <div><b>📚</b><span>精选学习资源持续更新</span></div>
+    <div><b>🖨️</b><span>可打印教具直接下载</span></div>
+    <div><b>🔒</b><span>随时取消，按月付费</span></div>
+  </div>
+</header>
+
+<section class="section wrap">
+  <h2>会员可以得到什么</h2>
+  <p class="lede">一份订阅，解锁全部会员资源</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="emoji">📚</div><h3>会员专享文库</h3><p>认字、数学、专注力、习惯养成——按年龄整理的实战指南，全部解锁。</p></div>
+    <div class="card"><div class="emoji">🖨️</div><h3>可打印教具包</h3><p>练习卡、闪卡、游戏棋盘，PDF 高清打印，在家就能开小课堂。</p></div>
+    <div class="card"><div class="emoji">🗓️</div><h3>每周学习计划</h3><p>每天 10 分钟的陪伴清单，照着做就行，不用再到处找资源。</p></div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <h2>先免费看看</h2>
+  <p class="lede">这些内容完全免费，登录即可阅读</p>
+  <div class="grid grid-3" id="free-grid"><p style="color:var(--muted)">加载中…</p></div>
+  <p style="text-align:center;margin-top:28px"><a class="btn btn-ghost" href="library.html">浏览全部内容 →</a></p>
+</section>
+
+<section class="section wrap" id="pricing">
+  <h2>会员定价</h2>
+  <p class="lede">一杯奶茶钱，换孩子一周的高质量陪伴</p>
+  <div class="grid grid-2" style="max-width:760px;margin:0 auto">
+    <div class="card price-card">
+      <div class="plan-name">月度会员</div>
+      <div class="price">$8<small>/月</small></div>
+      <ul>
+        <li>全部会员文章无限读</li>
+        <li>全部可打印教具下载</li>
+        <li>每周学习计划</li>
+        <li>随时取消</li>
+      </ul>
+      <button class="btn btn-ghost" onclick="startCheckout('monthly', this)">按月订阅</button>
+    </div>
+    <div class="card price-card featured">
+      <span class="save-tag">省 29% · 最受欢迎</span>
+      <div class="plan-name">年度会员 👑</div>
+      <div class="price">$68<small>/年</small></div>
+      <ul>
+        <li>包含月度会员全部权益</li>
+        <li>新资源优先体验</li>
+        <li>平均每天不到 $0.2</li>
+        <li>随时取消，按比例无忧</li>
+      </ul>
+      <button class="btn" onclick="startCheckout('yearly', this)">按年订阅</button>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:22px">通过 Stripe 安全支付 · 支持 Visa / Mastercard / 银联 · 随时取消</p>
+</section>
+
+<section class="section wrap faq" style="max-width:760px">
+  <h2>常见问题</h2>
+  <p class="lede"> </p>
+  <details><summary>内容适合多大孩子？</summary><p>主要面向 3–6 岁学龄前儿童，每份资源都会标注建议年龄和玩法说明。</p></details>
+  <details><summary>可以随时取消吗？</summary><p>可以。在「我的账户」里自助管理订阅，取消后会员权益保留到当前周期结束，不再续费。</p></details>
+  <details><summary>可打印教具怎么用？</summary><p>会员可直接下载 PDF，用家用打印机或去打印店打印即可，推荐 200g 以上卡纸打印闪卡。</p></details>
+  <details><summary>付款安全吗？</summary><p>支付由 Stripe 处理，我们不会存储你的银行卡信息。登录采用邮箱验证码，无需记密码。</p></details>
+</section>
+
+<footer>© 2026 趣学岛 FunLearn Island · 用心陪伴每一天 🌱</footer>
+
+<script src="assets/app.js"></script>
+<script>
+initNav("home");
+(async () => {
+  try {
+    const items = (await fetchContent()).filter(i => i.tier === "free").slice(0, 3);
+    document.getElementById("free-grid").innerHTML =
+      items.map(i => contentCard(i, false)).join("") || "<p>敬请期待…</p>";
+  } catch (e) { document.getElementById("free-grid").innerHTML = "<p>加载失败，请刷新重试。</p>"; }
+})();
+</script>
+</body>
+</html>

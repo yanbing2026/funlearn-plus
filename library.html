@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内容库 — 趣学岛</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="logo" href="index.html">🏝️ 趣学岛<small>FunLearn Island</small></a>
+  <div class="nav-links">
+    <a href="library.html" data-page="library" class="hide-sm">内容库</a>
+    <a href="index.html#pricing" class="hide-sm">会员定价</a>
+    <span id="nav-auth"></span>
+  </div>
+</div></nav>
+
+<section class="section wrap">
+  <h2>📚 内容库</h2>
+  <p class="lede" id="library-lede">免费内容直接读，会员内容解锁全部</p>
+  <div class="grid grid-3" id="grid"><p style="color:var(--muted)">加载中…</p></div>
+</section>
+
+<footer>© 2026 趣学岛 FunLearn Island</footer>
+
+<script src="assets/app.js"></script>
+<script>
+initNav("library");
+(async () => {
+  try {
+    const [{ active }, items] = await Promise.all([getMembership(), fetchContent()]);
+    const grid = document.getElementById("grid");
+    if (!items.length) { grid.innerHTML = "<p>内容正在准备中，敬请期待…</p>"; return; }
+    grid.innerHTML = items.map(i => contentCard(i, !active)).join("");
+    if (!active && items.some(i => i.tier === "member")) {
+      document.getElementById("library-lede").innerHTML =
+        '🔒 <a href="index.html#pricing" style="color:var(--purple);font-weight:700">成为会员</a>，解锁全部会员专享内容';
+    } else if (active) {
+      document.getElementById("library-lede").textContent = "👑 会员已解锁全部内容，尽情探索吧！";
+    }
+  } catch (e) {
+    document.getElementById("grid").innerHTML = "<p>加载失败，请刷新重试。</p>";
+  }
+})();
+</script>
+</body>
+</html>
