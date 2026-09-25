@@ -4,7 +4,7 @@ A **membership-based learning resource site** for families with kids ages 3–6.
 
 - **Hosting**: GitHub Pages (static only)
 - **Backend**: Supabase (Auth + Postgres + Storage + Edge Functions)
-- **Payments**: Stripe subscriptions ($8/mo, $68/yr); webhooks sync membership status automatically
+- **Payments**: Stripe subscriptions ($4/mo, $34/yr); webhooks sync membership status automatically
 
 ## Live site
 
